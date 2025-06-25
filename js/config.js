@@ -102,17 +102,13 @@ const API_SITES = {
         api: 'https://api.wujinapi.me/api.php/provide/vod',
         name: '无尽资源'
     },
-    wwzy: {
-        api: 'https://wwzy.tv/api.php/provide/vod',
-        name: '旺旺短剧'
+    ott: {
+        api: 'https://123av.org/api.php/provide/vod',
+        name: '123a'
     },
     ikun: {
         api: 'https://ikunzyapi.com/api.php/provide/vod',
         name: 'iKun资源'
-    },
-    123A: {
-        api: 'https://123av.org/api.php/provide/vod',
-        name: '123a'
     },
     testSource: {
         api: 'https://www.example.com/api.php/provide/vod',
