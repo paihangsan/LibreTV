@@ -78,7 +78,6 @@ function initAPICheckboxes() {
     // 创建普通API源的复选框
     Object.keys(API_SITES).forEach(apiKey => {
         const api = API_SITES[apiKey];
-        if (api.adult) return; // 跳过成人内容API，稍后添加
 
         const checked = selectedAPIs.includes(apiKey);
 
@@ -130,7 +129,6 @@ function addAdultAPI() {
         // 创建成人API源的复选框
         Object.keys(API_SITES).forEach(apiKey => {
             const api = API_SITES[apiKey];
-            if (!api.adult) return; // 仅添加成人内容API
 
             const checked = selectedAPIs.includes(apiKey);
 
@@ -154,26 +152,6 @@ function addAdultAPI() {
         container.appendChild(adultdiv);
     }
 }
-
-// 检查是否有成人API被选中
-function checkAdultAPIsSelected() {
-    // 查找所有内置成人API复选框
-    const adultBuiltinCheckboxes = document.querySelectorAll('#apiCheckboxes .api-adult:checked');
-
-    // 查找所有自定义成人API复选框
-    const customApiCheckboxes = document.querySelectorAll('#customApisList .api-adult:checked');
-
-    const hasAdultSelected = adultBuiltinCheckboxes.length > 0 || customApiCheckboxes.length > 0;
-
-    const yellowFilterToggle = document.getElementById('yellowFilterToggle');
-    const yellowFilterContainer = yellowFilterToggle.closest('div').parentNode;
-    const filterDescription = yellowFilterContainer.querySelector('p.filter-description');
-
-    // 如果选择了成人API，禁用黄色内容过滤器
-    if (hasAdultSelected) {
-        yellowFilterToggle.checked = false;
-        yellowFilterToggle.disabled = true;
-        localStorage.setItem('yellowFilterEnabled', 'false');
 
         // 添加禁用样式
         yellowFilterContainer.classList.add('filter-disabled');
