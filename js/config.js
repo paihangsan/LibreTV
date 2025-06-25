@@ -110,6 +110,10 @@ const API_SITES = {
         api: 'https://ikunzyapi.com/api.php/provide/vod',
         name: 'iKun资源'
     },
+    123A: {
+        api: 'https://123av.org/api.php/provide/vod',
+        name: '123a'
+    },
     testSource: {
         api: 'https://www.example.com/api.php/provide/vod',
         name: '空内容测试源',
